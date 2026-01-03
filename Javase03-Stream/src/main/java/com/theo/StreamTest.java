@@ -16,7 +16,7 @@ public class StreamTest {
      */
     public static void main(String[] args) {
         ArrayList<String> manList = new ArrayList<String>();
-        manList.add("周润发");
+        manList.add("周润发 ");
         manList.add("成龙");
         manList.add("刘德华");
         manList.add("吴京");
