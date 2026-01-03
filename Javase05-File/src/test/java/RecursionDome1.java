@@ -3,6 +3,7 @@ public class RecursionDome1 {
     递归思想：方法自己调用自己
      */
     public static void main(String[] args) {
+
         int result  = factorial(5);
         System.out.println(result);
     }
