@@ -11,9 +11,10 @@
     <modules>
         <module>Javase01-Set</module>
         <module>Javase02-Map</module>
-        <module>Javase03-Steam</module>
+        <module>Javase03-Stream</module>
         <module>Javase04-Exception</module>
         <module>Javase05-File</module>
+        <module>Javase06-API</module>
     </modules>
 
     <properties>
