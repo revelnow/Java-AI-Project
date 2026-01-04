@@ -40,3 +40,44 @@ public class AiMemoryBuffer {
 | HashSet 底层原理 | HashSet 基于哈希表实现，利用哈希函数计算元素的存储位置，实现快速的插入、删除和查找操作。 |
 | LinkedHashSet 优势 | 结合了 HashSet 的快速去重和 LinkedList 的有序特性，适合需要保持插入顺序且去重的场景。 |
 | AI 记忆池设计 | 选择合适的数据结构（如 LinkedHashSet）以平衡去重效率和上下文顺序，提升 AI 对话质量。 |
+
+## 🧠 防遗忘附录
+
+### 我当时在干什么？
+- 学 Java 中的 `Set` 集合
+- 对比了 `HashSet`、`LinkedHashSet` 的行为差异
+- 在工程/AI 场景中思考「去重」问题
+
+---
+
+### 一开始我哪里想错了？
+- 以为 Set 是“有顺序的”
+- 没意识到 **是否去重，取决于 `equals + hashCode`**
+- 以为 Set 只能用在简单数据结构里
+
+---
+
+### 我最后记住的 3 句话
+- Set 的核心价值是：**去重**
+- HashSet 无序，LinkedHashSet 保序
+- 去不去重，不看 Set，看对象本身
+
+---
+
+### 工程 / AI 场景中的 Set
+- AI 对话上下文去重
+- 防止重复 prompt / 重复数据进入管道
+- 快速判断某个元素是否“已经处理过”
+
+---
+
+### 关键代码锚点
+- Set 基础使用：`SetDemo1.java`
+- 去重行为验证：`SetDemo2.java`
+- 保序去重实现：`LinkedHashSetDemo.java`
+
+---
+
+### 如果以后全忘了
+👉 先回想一句话：  
+**Set 不是为了存数据，而是为了“防重复犯错”**
