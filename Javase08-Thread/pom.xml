@@ -3,21 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.theo</groupId>
+        <artifactId>Java-AI-Project</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <groupId>com.theo</groupId>
-    <artifactId>Java-AI-Project</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>Javase01-Set</module>
-        <module>Javase02-Map</module>
-        <module>Javase03-Stream</module>
-        <module>Javase04-Exception</module>
-        <module>Javase05-File</module>
-        <module>Javase06-API</module>
-        <module>Javase07-IO</module>
-        <module>Javase08-Thread</module>
-    </modules>
+    <artifactId>Javase08-Thread</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
