@@ -17,7 +17,7 @@
 ## 🛠️ 关键代码实现：指数退避重试工具类
 
 ```java
-public class RetryUtils {
+public class resilience.RetryUtils {
     public static void executeWithRetry(Runnable task) {
         int maxRetries = 3;
         int retryCount = 0;
