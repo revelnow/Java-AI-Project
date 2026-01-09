@@ -43,6 +43,13 @@ ThreadPoolExecutor agentPool = new ThreadPoolExecutor(
 **最大承载能力：**  
 $最大承载能力 = 最大线程数 (maximumPoolSize) + 队列容量 (queueCapacity)$
 
+### 🛡️ 工业级线程池审计 (Industrial Audit)
+
+- **核心公式**：$最大承载量 = MaximumPoolSize + QueueCapacity$。
+- **背压策略**：使用 `CallerRunsPolicy`。当 AI 算力达到极限时，通过阻塞调用方来保护系统稳定，防止内存溢出（OOM）。
+- **线程命名**：通过 `ThreadFactory` 为线程命名，这是在分布式日志中定位“哪次 AI 推理卡住了”的唯一凭证。
+- **优雅停机**：使用 `shutdown()` + `awaitTermination()`。严禁直接关闭 JVM，否则会导致正在生成的 AI 文本丢失或数据库连接断开。
+
 ---
 
 ## 🎙️ 面试高频关注点 (Interview Questions)
