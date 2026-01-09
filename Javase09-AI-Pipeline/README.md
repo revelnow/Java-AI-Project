@@ -5,11 +5,11 @@
 
 ## 🛠️ 技术栈复盘 (Engineering Highlights)
 
-### 1. 故障自愈：RetryUtils
+### 1. 故障自愈：resilience.RetryUtils
 - **核心算法**：指数退避 (Exponential Backoff)，设置 `MAX_DELAY` 防止僵尸线程。
 - **并发控制**：响应 `InterruptedException` 并恢复中断位，确保管道在极端情况下的**优雅停机**能力。
 
-### 2. 成本控制：ChatContextManager
+### 2. 成本控制：contex.ChatContextManager
 - **数据结构**：`LinkedList`（双向链表），实现 $O(1)$ 复杂度的**滑动窗口算法**。
 - **线程安全**：`ReentrantLock` 配合 `try-finally` 结构，确保高并发对话下的原子性与活跃性。
 
@@ -85,5 +85,31 @@ finally {
     lock.unlock(); 
 }
 ````
+## How to Run
+
+### 1) FileDataCleaner（大文件流式清洗）
+**输入文件：** `Javase09-AI-Pipeline/data/raw.txt`（UTF-8）  
+**输出文件：** `Javase09-AI-Pipeline/data/clean.txt`（UTF-8）
+
+运行方式：
+- 直接运行 `FileDataCleaner.java#main`
+
+> IntelliJ 建议把 Run Configuration 的 Working directory 设置为 `$MODULE_WORKING_DIR$`（Javase09-AI-Pipeline 模块目录），避免相对路径找不到文件。
+
+### Expected Output（示例）
+控制台会看到类似：
+- `清洗完成 => .../Javase09-AI-Pipeline/data/clean.txt`
+
+`clean.txt` 内容应满足：
+- 空行被过滤
+- 两侧空白被 trim
+- 全部转为小写
+- （可选）去重：注意 `distinct()` 会占用内存，大文件默认不建议开启
+
+## Verification（验证清单）
+- [ ] raw.txt 包含：空行 / 大小写混合 / 首尾空格 / 重复行
+- [ ] clean.txt 中：空行消失，全部小写，首尾无空格
+- [ ] 运行过程中不会一次性把全部文件读入内存（使用 `Files.lines` 流式处理）
+
 
 
