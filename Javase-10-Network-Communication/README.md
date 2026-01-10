@@ -88,6 +88,17 @@ ThreadPoolExecutor pool = new ThreadPoolExecutor(
 - 客户端打印：`OK: saved to data/uploads/upload_*.bin`
 - 模块目录出现：`data/uploads/upload_*.bin`
 
+## ✅ How to Run（HTTP：手写报文）
+
+运行：
+- `http.HttpPostRawBuilderDemo`
+
+✅ Expected（验收标准）
+- 输出包含 4 部分：请求行 / 请求头 / 空行 / JSON Body
+- `Content-Length` 等于 JSON Body 的 **UTF-8 字节长度**
+- 换行符为 `\r\n`（HTTP 标准 CRLF）
+
+
 ---
 
 ## 🎙️ 面试高频关注点 (Interview Questions)
