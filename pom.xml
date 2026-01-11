@@ -19,6 +19,7 @@
         <module>Javase08-Thread</module>
         <module>Javase09-AI-Pipeline</module>
         <module>Javase10-Network-Communication</module>
+        <module>Javase11-Advanced-Technology</module>
     </modules>
 
     <properties>
