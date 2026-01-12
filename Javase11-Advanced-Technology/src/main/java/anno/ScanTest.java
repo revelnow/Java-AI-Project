@@ -1,22 +1,26 @@
 package anno;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class ScanTest {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        //1.获取字节码文件对象
         Class<MethodDemo> methodDemoClass = MethodDemo.class;
 
-        MethodDemo instance = methodDemoClass.getConstructor().newInstance();
+        //5.反射执行被Test注解修饰的方法对象
+        MethodDemo methodDemo = methodDemoClass.getConstructor().newInstance();
 
-        // 获取该类中所有成员方法的对象
-        Method[] methods = methodDemoClass.getMethods();
 
-        // 遍历数组获取每一个成员方法对象
+        //2.获取所有方法
+        Method[] methods = methodDemoClass.getDeclaredMethods();
+
+        //3.遍历方法
         for (Method method : methods) {
-            // 判断该方法的头顶上, 是否存在@Test注解
-            if (method.isAnnotationPresent(Test.class)) {
-                // 方法执行
-                method.invoke(instance);
+            //4.判断方法上是否有注解
+            if(method.isAnnotationPresent(Test.class)){
+                //有注解，执行该方法
+                method.invoke(methodDemo);
             }
         }
     }
