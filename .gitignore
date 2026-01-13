@@ -45,3 +45,10 @@ build/
 
 # Maven
 target/
+
+# Node / Frontend
+node_modules/
+**/node_modules/
+dist/
+build/
+.cache/
