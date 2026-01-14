@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS-函数</title>
+</head>
+<body>
+  
+
+  <script>
+    //1. 自定义对象
+    // let user = {
+    //   name: '玲花',
+    //   age: 28,
+    //   gender: '女',
+    //   sing: function(){
+    //     alert('悠悠的唱着最炫的民族风~')
+    //   }
+    // }
+
+    /* let user = {
+      name: '玲花',
+      age: 28,
+      gender: '女',
+      sing(){
+        alert('悠悠的唱着最炫的民族风~')
+      }
+    } */
+
+    //2. 调用对象属性/方法
+    // alert(user.name)
+    // user.sing()
+
+
+    //3. JSON - JS对象标记法
+    let person = {
+      name: 'itcast',
+      age: 18,
+      gender: '男'
+    }
+    alert(JSON.stringify(person)); //js对象 --> json字符串
+
+    let personJson = '{"name": "heima", "age": 18}';
+    alert(JSON.parse(personJson).name);
+
+  </script>
+</body>
+</html>
