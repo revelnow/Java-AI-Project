@@ -52,3 +52,9 @@ node_modules/
 dist/
 build/
 .cache/
+
+**/node_modules/
+**/dist/
+**/.vite/
+*.iml
+.idea/
