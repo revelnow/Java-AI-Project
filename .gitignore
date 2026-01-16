@@ -55,3 +55,5 @@ logs/
 # Windows scripts (if any)
 *.bat text eol=crlf
 *.cmd text eol=crlf
+
+/web01-html-css/
