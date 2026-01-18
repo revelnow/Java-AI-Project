@@ -1,4 +1,4 @@
-# 📅 Day03：Maven 基础 + JUnit5 单元测试（web03-maven）
+# 📅 2026.01.15：Maven 基础 + JUnit5 单元测试（web03-maven）
 
 > 目标：用一个可运行的 Maven 模块，理解 **POM/依赖/排除依赖/生命周期**，并通过 **JUnit5** 建立“用断言验证业务”的工程习惯。
 
