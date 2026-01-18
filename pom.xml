@@ -21,6 +21,7 @@
         <module>Javase10-Network-Communication</module>
         <module>Javase11-Advanced-Technology</module>
         <module>web03-maven</module>
+        <module>web04-springboot</module>
     </modules>
 
     <properties>
