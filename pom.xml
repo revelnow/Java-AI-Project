@@ -22,6 +22,8 @@
         <module>Javase11-Advanced-Technology</module>
         <module>web03-maven</module>
         <module>web04-springboot</module>
+        <module>web05-mysql</module>
+        <module>web06-mybatis</module>
     </modules>
 
     <properties>
