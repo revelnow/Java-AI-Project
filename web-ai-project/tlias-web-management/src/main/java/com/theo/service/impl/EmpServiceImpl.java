@@ -11,6 +11,7 @@ import com.theo.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDate;
@@ -39,6 +40,7 @@ public class EmpServiceImpl implements EmpService {
         return pageResult;
     }
 
+    @Transactional
     @Override
     public void add(Emp emp) {
         /**
