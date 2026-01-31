@@ -2,10 +2,7 @@ package com.theo.mapper;
 
 import com.theo.pojo.Emp;
 import com.theo.pojo.EmpQueryParam;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -27,4 +24,20 @@ public interface EmpMapper {
     @Insert("insert into emp(username, name, gender, phone, job, salary, image, entry_date, dept_id, create_time, update_time)" +
             " values (#{username}, #{name}, #{gender},#{phone},#{job},#{salary},#{image},#{entryDate},#{deptId},#{createTime},#{updateTime})")
     void insert(Emp emp);
+
+    /**
+     * 根据ID批量删除员工信息
+     */
+    void deleteBatch(List<Integer> ids);
+
+    /**
+     * 根据ID查询员工信息
+     */
+    @Select("select emp.*, dept.name as dept_name from emp left join dept on emp.dept_id = dept.id where emp.id = #{id}")
+    Emp getById(@Param("id") Integer id);
+
+    /**
+     * 更新员工信息
+     */
+    void update(Emp emp);
 }

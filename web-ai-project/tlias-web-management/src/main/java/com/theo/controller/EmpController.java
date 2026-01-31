@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -41,6 +42,36 @@ public class EmpController {
     public Result add(@RequestBody Emp emp) {
         log.info("添加员工, {}", emp);
         empService.add(emp);
+        return Result.success();
+    }
+
+    /**
+     *删除员工信息
+     */
+    @DeleteMapping
+    public Result delete(@RequestParam List<Integer> ids) {
+        log.info("删除员工{}", ids);
+        empService.delete(ids);
+        return Result.success();
+    }
+
+    /**
+     * 查询回显员工信息
+     */
+    @GetMapping("/{id}")
+    public Result getById(@PathVariable("id") Integer id) {
+        log.info("查询员工{}", id);
+        Emp emp = empService.getById(id);
+        return Result.success(emp);
+    }
+
+    /**
+     * 根据id修改员工信息
+     */
+    @PutMapping
+    public Result update(@RequestBody Emp emp) {
+        log.info("修改员工{}", emp);
+        empService.update(emp);
         return Result.success();
     }
 }

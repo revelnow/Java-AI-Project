@@ -6,6 +6,7 @@ import com.theo.pojo.PageResult;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 public interface EmpService {
@@ -16,4 +17,15 @@ public interface EmpService {
    PageResult<Emp> page(EmpQueryParam empQueryParam);
 
     void add(Emp emp);
+
+    void delete(List<Integer> ids);
+
+    /**
+     * 根据ID查询员工信息
+     * @param id
+     */
+    Emp getById(Integer id);
+
+    void update(Emp emp);
+
 }
