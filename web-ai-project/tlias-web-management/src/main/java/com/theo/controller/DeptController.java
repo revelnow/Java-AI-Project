@@ -54,7 +54,7 @@ public class DeptController {
      * 删除部门:方式三 省略@RequestParam(前端传递的参数名称和形参名称一致)[推荐]
      **/
     @DeleteMapping
-    public Result delete(@RequestParam("id") Integer id){
+    public Result delete(@PathVariable Integer id){
         //System.out.println("删除部门"+id);\
         log.info("删除部门{}",id);
         deptService.deleteById(id);

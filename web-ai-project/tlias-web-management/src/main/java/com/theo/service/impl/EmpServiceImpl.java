@@ -109,4 +109,13 @@ public class EmpServiceImpl implements EmpService {
             empExprMapper.insertBatch(exprList);
         }
     }
+
+    /**
+     * 获取所有员工信息
+     */
+    @Override
+    public List<Emp> listAll() {
+        List<Emp> empList = empMapper.listAll();
+        return empList;
+    }
 }

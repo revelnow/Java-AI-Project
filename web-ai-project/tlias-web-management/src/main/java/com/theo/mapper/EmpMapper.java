@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface EmpMapper {
@@ -40,4 +41,24 @@ public interface EmpMapper {
      * 更新员工信息
      */
     void update(Emp emp);
+
+    /**
+     * 获取职位及相关数据
+     */
+    @MapKey("pos")
+    List<Map<String, Object>> getJobOptions();
+
+    /**
+     * 获取性别及相关数据
+     */
+    @MapKey("name")
+    List<Map<String, Object>> getGenderOptions();
+
+    /**
+     * 查询所有员工信息
+     */
+    @Select("select * from emp")
+    List<Emp> listAll();
+
+
 }
