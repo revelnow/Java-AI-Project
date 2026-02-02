@@ -55,6 +55,12 @@
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>2.1.0</version>  <!-- 升级到兼容 Spring Boot 3.x 的版本 -->
         </dependency>
+        <!-- JWT -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
         <!--阿里云OSS SDK-->
         <dependency>
             <groupId>com.aliyun.oss</groupId>

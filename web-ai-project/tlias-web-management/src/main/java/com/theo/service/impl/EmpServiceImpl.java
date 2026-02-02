@@ -3,10 +3,7 @@ package com.theo.service.impl;
 import com.github.pagehelper.Page;
 import com.theo.mapper.EmpExprMapper;
 import com.theo.mapper.EmpMapper;
-import com.theo.pojo.Emp;
-import com.theo.pojo.EmpExpr;
-import com.theo.pojo.EmpQueryParam;
-import com.theo.pojo.PageResult;
+import com.theo.pojo.*;
 import com.theo.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -117,5 +114,11 @@ public class EmpServiceImpl implements EmpService {
     public List<Emp> listAll() {
         List<Emp> empList = empMapper.listAll();
         return empList;
+    }
+
+    @Override
+    public LoginInfo login(Emp emp) {
+        
+        return null;
     }
 }

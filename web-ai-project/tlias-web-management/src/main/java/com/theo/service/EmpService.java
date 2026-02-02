@@ -2,6 +2,7 @@ package com.theo.service;
 
 import com.theo.pojo.Emp;
 import com.theo.pojo.EmpQueryParam;
+import com.theo.pojo.LoginInfo;
 import com.theo.pojo.PageResult;
 import org.springframework.stereotype.Service;
 
@@ -29,4 +30,6 @@ public interface EmpService {
     void update(Emp emp);
 
     List<Emp> listAll();
+
+    LoginInfo login(Emp emp);
 }
